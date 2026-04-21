@@ -1,0 +1,67 @@
+/* Admin Header - Apple Style */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.85); /* Glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Soft border instead of harsh shadow */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: var(--text-color);
+}
+
+.sidebar-toggle:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-profile:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

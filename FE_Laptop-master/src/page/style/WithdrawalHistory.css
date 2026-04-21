@@ -1,0 +1,96 @@
+.withdrawal-history-container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.withdrawal-history-header {
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.filter-history-card {
+    margin-bottom: 24px;
+}
+
+.filter-history-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .filter-history-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.search-history-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.status-history-select,
+.sort-history-select {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .status-history-select,
+    .sort-history-select {
+        width: 180px;
+    }
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ant-table {
+    overflow-x: auto;
+}
+
+.ant-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}

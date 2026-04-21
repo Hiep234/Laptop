@@ -1,0 +1,30 @@
+.user-stats {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-stats h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.user-stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.user-stat-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.user-stat-item strong {
+  color: #3498db;
+}

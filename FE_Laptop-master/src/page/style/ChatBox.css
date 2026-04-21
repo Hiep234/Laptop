@@ -1,0 +1,135 @@
+/* ===== CHAT BOX CONTAINER (dùng chung cho AI chat & Support chat) ===== */
+.chat-box-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    height: 520px;           /* chiều cao cố định */
+    max-height: calc(100vh - 40px); /* ngăn tràn màn hình nhỏ */
+    display: none;
+    flex-direction: column;
+    z-index: 9999;           /* Tăng z-index để không bị đè */
+}
+
+.chat-box-container.show {
+    display: flex;
+}
+
+/* AI chat nằm bên cạnh support chat */
+.ai-chat-box-container {
+    right: 400px;
+}
+
+/* ===== CHAT BOX (khung chứa) ===== */
+.chat-box {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    height: 100%;           /* fill hết container */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.chat-header {
+    background-color: #073fe3;
+    color: white;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;         /* không co lại */
+}
+
+.chat-header span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===== INTRO MESSAGE ===== */
+.chat-intro {
+    background-color: #f5f7ff;
+    padding: 10px 14px;
+    font-size: 13px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #e8eaf0;
+    flex-shrink: 0;         /* không co lại */
+}
+
+/* ===== CHAT CONTENT (phần cuộn được) ===== */
+.chat-content {
+    padding: 10px 12px;
+    overflow-y: auto;
+    flex: 1;                /* chiếm hết khoảng trống giữa header và input */
+    min-height: 0;          /* quan trọng để flex hoạt động đúng */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ===== TIN NHẮN ===== */
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+}
+
+.chat-message.sent {
+    align-items: flex-end;
+}
+
+.chat-message.received {
+    align-items: flex-start;
+}
+
+/* ===== KHU VỰC NHẬP (luôn ở dưới cùng) ===== */
+.chat-input-area {
+    border-top: 1px solid #e8eaf0;
+    padding: 10px 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    flex-shrink: 0;         /* không co lại - đảm bảo luôn hiển thị */
+    background: #fff;
+}
+
+/* Legacy support cho .chat-input */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    flex-shrink: 0;
+    background: #fff;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    background-color: #073fe3;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0530b8;
+}

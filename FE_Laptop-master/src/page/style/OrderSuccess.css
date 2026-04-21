@@ -1,0 +1,22 @@
+/* OrderSuccess.css */
+.order-success-container {
+    text-align: center;
+}
+
+@keyframes scaleCheck {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.check-icon-animation {
+    animation: scaleCheck 1s ease-out;
+}

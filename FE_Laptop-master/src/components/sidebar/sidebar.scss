@@ -1,0 +1,139 @@
+/* Sidebar Apple Style */
+.sidebar {
+  height: 100vh;
+  background: #ffffff; /* Sleek white background */
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 260px;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-right: 1px solid rgba(0,0,0,0.05);
+
+  /* Hide scrollbar */
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &.collapsed {
+    width: 80px;
+
+    .logo span,
+    .sidebar__item span,
+    .section-title {
+      display: none;
+    }
+    
+    .sidebar__header {
+      justify-content: center !important;
+      padding: 1.5rem 0;
+    }
+    
+    .logo {
+      justify-content: center;
+    }
+    
+    .sidebar__item {
+      justify-content: center;
+      padding: 0.75rem 0;
+      margin: 0.5rem 12px;
+      border-radius: 12px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-color);
+
+      &-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    overflow-y: auto;
+  }
+
+  &__section {
+    margin-bottom: 1.5rem;
+
+    &.bottom-section {
+      margin-top: auto;
+      margin-bottom: 0;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding-top: 1rem;
+    }
+
+    .section-title {
+      padding: 0.5rem 1.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(0,0,0,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: rgba(0,0,0,0.5);
+      transition: color 0.2s;
+    }
+
+    &:hover {
+      background: var(--secondary-color);
+      color: var(--text-color);
+      
+      svg {
+        color: var(--text-color);
+      }
+    }
+
+    &.active {
+      background: #eef5ff;
+      color: var(--primary-color);
+      font-weight: 600;
+
+      svg {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

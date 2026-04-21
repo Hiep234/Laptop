@@ -1,0 +1,249 @@
+/* Login Modal Styles */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-modal__content {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.login-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-modal__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.login-modal__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-modal__close:hover {
+    color: #333;
+}
+
+.login-modal__error {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-group.error input {
+    border-color: #dc2626;
+}
+
+.form-group.error input:focus {
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    gap: 8px;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+}
+
+.checkbox-container input:disabled + .checkmark {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.forgot-password {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding: 0;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.submit-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #2563eb;
+}
+
+.submit-button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+.register-prompt {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.register-link {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
