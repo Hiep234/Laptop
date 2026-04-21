@@ -117,7 +117,8 @@ const ProductSections = () => {
 
     return (
         <>
-            {/* Sản phẩm gợi ý */}
+            {/* Sản phẩm gợi ý - chỉ hiển thị khi đang tải hoặc có dữ liệu */}
+            {(loading.feature || featureProducts.length > 0) && (
             <section className="featured-products-section">
                 <div className="container">
                     <div className="section-header">
@@ -128,8 +129,6 @@ const ProductSections = () => {
 
                     {loading.feature ? (
                         <div className="loading-container-home-screen">Đang tải sản phẩm...</div>
-                    ) : error ? (
-                        <div className="error-container-home-screen">{error}</div>
                     ) : (
                         <div className="products-grid-home-screen">
                             {featureProducts.slice(0, 4).map((product) => (
@@ -198,6 +197,8 @@ const ProductSections = () => {
                     )}
                 </div>
             </section>
+            )}
+
 
             {/* Flash Sale Section */}
             <section className="flash-sale-section">

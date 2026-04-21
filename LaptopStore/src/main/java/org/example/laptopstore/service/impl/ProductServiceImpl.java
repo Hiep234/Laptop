@@ -237,13 +237,31 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<ProductOptionListUserResponse> getProductFeature(Long userId) {
-        Pageable pageable = PageRequest.of(0,5);
-        List<Long> listIdProduct = getRecommendations(userId).getRecommended_product_option_ids();
-
-        Page<ProductOption> productOptions = productOptionRepository.getAllProductOptions(pageable,listIdProduct);
-
-        return productOptions.map(productOption -> productMapper.toProductListUserResponse(productOption, productReviewRepository.ratingAverageProductOption(productOption.getId()), orderItemsRepository.countProductOptionSold(productOption.getId())));
+        Pageable pageable = PageRequest.of(0, 5);
+        try {
+            List<Long> listIdProduct = getRecommendations(userId).getRecommended_product_option_ids();
+            if (listIdProduct != null && !listIdProduct.isEmpty()) {
+                Page<ProductOption> productOptions = productOptionRepository.getAllProductOptions(pageable, listIdProduct);
+                return productOptions.map(productOption -> productMapper.toProductListUserResponse(
+                        productOption,
+                        productReviewRepository.ratingAverageProductOption(productOption.getId()),
+                        orderItemsRepository.countProductOptionSold(productOption.getId())
+                ));
+            }
+        } catch (Exception e) {
+            // Dịch vụ recommendation không khả dụng, fallback về sản phẩm phổ biến
+        }
+        // Fallback: trả về top sản phẩm bán chạy nhất
+        Page<ProductOption> fallbackProducts = productOptionRepository.getAllProductOptions(
+                "", null, null, null, null, "createdAt", "desc", pageable
+        );
+        return fallbackProducts.map(productOption -> productMapper.toProductListUserResponse(
+                productOption,
+                productReviewRepository.ratingAverageProductOption(productOption.getId()),
+                orderItemsRepository.countProductOptionSold(productOption.getId())
+        ));
     }
+
     public RecommendationResponse getRecommendations(Long userId) {
         String url = "http://localhost:5000/api/recommendations?user_id=" + userId;
 
