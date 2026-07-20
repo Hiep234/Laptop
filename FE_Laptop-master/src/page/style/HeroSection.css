@@ -1,0 +1,405 @@
+/* Hero Section Main Wrapper */
+.hero-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #050508;
+}
+
+.hero-carousel {
+    width: 100%;
+}
+
+/* Base Slide Structure */
+.hero-slide {
+    width: 100%;
+    min-height: 520px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    padding: 3rem 0;
+}
+
+.hero-slide-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    z-index: 2;
+}
+
+/* Text Content Column */
+.hero-slide-content {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Image Column */
+.hero-slide-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 500px;
+}
+
+.hero-laptop-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.hero-slide.active .hero-laptop-image {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Background Backdrop Glows */
+.hero-image-backdrop {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    z-index: -1;
+    transition: all 0.8s ease;
+}
+
+/* Themes Definition */
+/* 1. Gaming Theme (Cyber Dark) */
+.gaming-theme {
+    background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, rgba(250, 250, 250, 1) 75%), #ffffff;
+}
+.gaming-theme .hero-image-backdrop {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    opacity: 0.15;
+}
+.gaming-theme .hero-badge {
+    background: rgba(168, 85, 247, 0.1);
+    color: #7c3aed;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+.gaming-theme .hero-highlight {
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gaming-theme .hero-title {
+    color: #0f172a;
+}
+.gaming-theme .hero-subtitle {
+    color: #475569;
+}
+.gaming-theme .feature-icon-gaming {
+    color: #8b5cf6;
+}
+.gaming-theme .primary-button {
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    border: none;
+    color: white;
+}
+.gaming-theme .primary-button:hover {
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
+.gaming-theme .secondary-button {
+    color: #334155;
+    border-color: #cbd5e1;
+    background: transparent;
+}
+.gaming-theme .secondary-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0f172a !important;
+}
+
+/* 2. Business Theme (Premium Minimalist Silver) */
+.business-theme {
+    background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.08) 0%, rgba(243, 244, 246, 1) 75%), #f3f4f6;
+}
+.business-theme .hero-image-backdrop {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    opacity: 0.2;
+}
+.business-theme .hero-badge {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0284c7;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+.business-theme .hero-highlight {
+    background: linear-gradient(to right, #0284c7, #0369a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.business-theme .hero-title {
+    color: #0f172a;
+}
+.business-theme .hero-subtitle {
+    color: #475569;
+}
+.business-theme .feature-icon-business {
+    color: #0ea5e9;
+}
+.business-theme .primary-button {
+    background: #0ea5e9;
+    border: none;
+    color: white;
+}
+.business-theme .primary-button:hover {
+    background: #0284c7;
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+    transform: translateY(-2px);
+}
+.business-theme .secondary-button {
+    color: #334155;
+    border-color: #cbd5e1;
+    background: transparent;
+}
+.business-theme .secondary-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0f172a;
+}
+
+/* 3. Workstation Theme (Deep Tech Blue) */
+.workstation-theme {
+    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(250, 250, 250, 1) 75%), #ffffff;
+}
+.workstation-theme .hero-image-backdrop {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    opacity: 0.15;
+}
+.workstation-theme .hero-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.workstation-theme .hero-highlight {
+    background: linear-gradient(to right, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.workstation-theme .hero-title {
+    color: #0f172a;
+}
+.workstation-theme .hero-subtitle {
+    color: #475569;
+}
+.workstation-theme .feature-icon-workstation {
+    color: #059669;
+}
+.workstation-theme .primary-button {
+    background: linear-gradient(to right, #3b82f6, #10b981);
+    border: none;
+    color: white;
+}
+.workstation-theme .primary-button:hover {
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+.workstation-theme .secondary-button {
+    color: #334155;
+    border-color: #cbd5e1;
+    background: transparent;
+}
+.workstation-theme .secondary-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0f172a !important;
+}
+
+/* Hero Badges and Typography */
+.hero-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.5s ease 0.1s;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.3s;
+}
+
+/* Features List Styling */
+.hero-features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.4s;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.4rem 0.85rem;
+    border-radius: 8px;
+    color: #94a3b8;
+}
+
+.gaming-theme .hero-feature-item,
+.business-theme .hero-feature-item,
+.workstation-theme .hero-feature-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: #475569;
+}
+
+/* Button Group Styling */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.5s;
+}
+
+.primary-button, .secondary-button {
+    height: 48px !important;
+    padding: 0 1.75rem !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease !important;
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff !important;
+}
+
+/* Active Slide Transitions */
+.hero-slide.active .hero-badge,
+.hero-slide.active .hero-title,
+.hero-slide.active .hero-subtitle,
+.hero-slide.active .hero-features-list,
+.hero-slide.active .hero-buttons {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Carousel Indicators Styling */
+.hero-carousel .slick-dots-bottom {
+    bottom: 24px;
+}
+.hero-carousel .slick-dots li button {
+    background: #0f172a;
+    opacity: 0.3;
+    height: 6px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.hero-carousel .slick-dots li.slick-active button {
+    background: #1890ff;
+    opacity: 1;
+    width: 24px;
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+    .hero-slide-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 2.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .hero-slide {
+        min-height: 720px;
+    }
+
+    .hero-slide-content {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-features-list, .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-slide-image-wrapper {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-slide {
+        min-height: 640px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-feature-item {
+        font-size: 0.75rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .primary-button, .secondary-button {
+        width: 100% !important;
+    }
+}

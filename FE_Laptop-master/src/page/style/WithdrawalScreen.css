@@ -1,0 +1,174 @@
+.withdrawal-container {
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.withdrawal-content {
+    width: 100%;
+    max-width: 480px;
+}
+
+.withdrawal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-top: 16px;
+}
+
+.header-title {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.header-placeholder {
+    width: 40px;
+}
+
+.withdrawal-steps {
+    margin-bottom: 24px;
+}
+
+.balance-card {
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.balance-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.balance-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.balance-amount {
+    margin: 0;
+}
+
+.card-header {
+    margin-bottom: 16px;
+}
+
+.card-header .ant-typography {
+    margin-bottom: 4px;
+}
+
+.amount-hint {
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+.transaction-summary {
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.summary-divider {
+    margin: 12px 0;
+}
+
+.total-row {
+    margin-top: 8px;
+}
+
+.confirmation-details {
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.detail-divider {
+    margin: 12px 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.error-alert {
+    margin-bottom: 16px;
+}
+
+.info-alert {
+    margin-bottom: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    width: 100%;
+}
+
+.action-buttons .ant-btn {
+    flex: 1;
+}
+
+.pin-input .ant-input-password-icon {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.success-card {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #f6ffed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.success-title {
+    margin-bottom: 8px;
+}
+
+.success-description {
+    display: block;
+    margin-bottom: 24px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.transaction-details {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.transaction-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.voucher-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.voucher-section-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.voucher-section-title .anticon {
+    color: #ff4d4f;
+}
+
+.voucher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.voucher-card-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+.voucher-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-family: 'Roboto', sans-serif;
+}
+
+.voucher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.voucher-card.active {
+    border-top: 4px solid #52c41a;
+}
+
+.voucher-card.expiring {
+    border-top: 4px solid #faad14;
+}
+
+.voucher-card.expired {
+    border-top: 4px solid #d9d9d9;
+    opacity: 0.8;
+}
+
+.voucher-header-strip {
+    height: 8px;
+    position: relative;
+    background: linear-gradient(90deg, #1890ff, #36cfc9);
+}
+
+.voucher-card.expiring .voucher-header-strip {
+    background: linear-gradient(90deg, #faad14, #ffc53d);
+}
+
+.voucher-card.expired .voucher-header-strip {
+    background: linear-gradient(90deg, #d9d9d9, #bfbfbf);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4f;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.voucher-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+}
+
+.voucher-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.voucher-icon {
+    color: #1890ff;
+    font-size: 20px;
+}
+
+.expiring-icon {
+    color: #faad14;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.voucher-description {
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+    min-height: 40px;
+    line-height: 1.4;
+}
+
+.voucher-badge-container {
+    margin: 12px 0;
+}
+
+.voucher-content {
+    margin: 16px 0;
+    flex: 1;
+}
+
+.voucher-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.voucher-row.highlight {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.voucher-row.small {
+    font-size: 13px;
+    color: #666;
+}
+
+.voucher-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.voucher-value {
+    font-weight: 600;
+    color: #1890ff;
+}
+
+.voucher-divider {
+    margin: 12px 0;
+}
+
+.voucher-progress {
+    margin-top: 16px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.progress-labels .muted {
+    color: #999;
+}
+
+.voucher-pagination {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.voucher-button {
+    margin-top: auto;
+    height: 40px;
+    font-weight: 500;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .voucher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .voucher-pagination .ant-pagination {
+        padding: 0 16px;
+    }
+
+    .voucher-pagination .ant-pagination-item,
+    .voucher-pagination .ant-pagination-prev,
+    .voucher-pagination .ant-pagination-next {
+        margin-right: 4px;
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .voucher-pagination .ant-pagination-jump-prev,
+    .voucher-pagination .ant-pagination-jump-next {
+        margin-right: 4px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+}

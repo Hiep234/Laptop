@@ -1,0 +1,147 @@
+/* Features trust badges section */
+.features-section-home {
+    padding: 6rem 0;
+    background: radial-gradient(circle at 80% 80%, rgba(241, 245, 249, 0.5) 0%, rgba(255, 255, 255, 1) 100%), #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+.features-container-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.features-grid-home {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* Base Card Style */
+.feature-card-home {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+}
+
+.feature-card-home:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Icon Container & Hover Effects */
+.feature-icon-container-home {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. Shield (Blue Accent) */
+.feat-shield .feature-icon-container-home {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0284c7;
+}
+.feat-shield:hover {
+    border-color: #0ea5e9;
+}
+.feat-shield:hover .feature-icon-container-home {
+    background: #0ea5e9;
+    color: white;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+/* 2. Heart (Rose Accent) */
+.feat-heart .feature-icon-container-home {
+    background: rgba(244, 63, 94, 0.1);
+    color: #e11d48;
+}
+.feat-heart:hover {
+    border-color: #f43f5e;
+}
+.feat-heart:hover .feature-icon-container-home {
+    background: #f43f5e;
+    color: white;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+}
+
+/* 3. Wrench (Purple Accent) */
+.feat-wrench .feature-icon-container-home {
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+}
+.feat-wrench:hover {
+    border-color: #8b5cf6;
+}
+.feat-wrench:hover .feature-icon-container-home {
+    background: #8b5cf6;
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+/* 4. Truck (Emerald Accent) */
+.feat-truck .feature-icon-container-home {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+.feat-truck:hover {
+    border-color: #10b981;
+}
+.feat-truck:hover .feature-icon-container-home {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Typography */
+.feature-title-home {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.2px;
+}
+
+.feature-description-home {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+    .features-grid-home {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .features-section-home {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .features-grid-home {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card-home {
+        padding: 2rem 1.25rem;
+    }
+    
+    .features-container-home {
+        padding: 0 1.25rem;
+    }
+}

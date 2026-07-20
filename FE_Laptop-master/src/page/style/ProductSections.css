@@ -1,0 +1,426 @@
+/* Container & Grid Setup */
+.home-product-sections-container {
+    width: 100%;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 1. Flash Sale Wrapper & Header */
+.flash-sale-wrapper {
+    background: radial-gradient(circle at 50% 50%, #f8fafc 0%, #ffffff 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.flash-sale-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(225, 29, 72, 0.03) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.flash-sale-header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header-title-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon-glow {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #e11d48, #f43f5e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+}
+
+.pulse-icon {
+    color: white;
+    animation: flashPulse 1.5s infinite;
+}
+
+@keyframes flashPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); filter: drop-shadow(0 0 5px white); }
+    100% { transform: scale(1); }
+}
+
+.header-title-text {
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #0f172a;
+    margin: 0;
+    text-shadow: none;
+}
+
+/* Countdown Blocks */
+.countdown-timer-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1.25rem;
+    border-radius: 30px;
+    color: #475569;
+}
+
+.clock-icon {
+    color: #e11d48;
+}
+
+.timer-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.timer-blocks {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.time-block {
+    background: #ffffff;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    color: #f43f5e;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    min-width: 38px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(244, 63, 94, 0.1);
+}
+
+.time-colon {
+    font-weight: 800;
+    color: #f43f5e;
+}
+
+/* 2. Grid & Cards Overhaul */
+.product-grid-wrapper {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.bg-soft-gray {
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.grid-section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.grid-section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.header-decor-line {
+    width: 60px;
+    height: 4px;
+    background: #1890ff;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.laptop-showcase-card {
+    border-radius: 16px !important;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    box-shadow: 0 4px 25px -4px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer;
+    position: relative;
+}
+
+.laptop-showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -8px rgba(15, 23, 42, 0.12) !important;
+    border-color: #1890ff !important;
+}
+
+/* Card Cover Image wrapper */
+.card-image-box {
+    position: relative;
+    aspect-ratio: 3/2;
+    background: #fafafa;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.card-main-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.laptop-showcase-card:hover .card-main-image {
+    transform: scale(1.06);
+}
+
+/* Discount Badge ribbon */
+.discount-tag-ribbon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* Hover Overlay action */
+.card-hover-action-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.laptop-showcase-card:hover .card-hover-action-overlay {
+    opacity: 1;
+}
+
+.hover-action-btn {
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.laptop-showcase-card:hover .hover-action-btn {
+    transform: translateY(0);
+}
+
+/* Card Content / Body Details */
+.card-body-wrapper {
+    padding: 1.25rem;
+}
+
+.card-product-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.7rem;
+    transition: color 0.2s ease;
+}
+
+.laptop-showcase-card:hover .card-product-title {
+    color: #1890ff;
+}
+
+/* Custom Specs Badges */
+.spec-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.spec-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    border-radius: 4px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.spec-badge-label {
+    background: #e2e8f0;
+    color: #475569;
+    font-weight: 700;
+    padding: 0.15rem 0.35rem;
+}
+
+.spec-badge-val {
+    color: #334155;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+}
+
+/* Price block */
+.card-price-details {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.card-price-current {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #e11d48;
+}
+
+.card-price-old {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+/* Footer Statistics */
+.card-footer-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.card-rating-block {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.star-rating-icon {
+    fill: #f59e0b;
+    color: #f59e0b;
+}
+
+.card-sold-count {
+    font-weight: 600;
+}
+
+/* View all Button styling overrides */
+.view-all-button-home-screen {
+    height: 48px !important;
+    padding: 0 2rem !important;
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease !important;
+}
+
+.flash-sale-btn {
+    background: #e11d48 !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+}
+
+.flash-sale-btn:hover {
+    background: #be123c !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.6);
+}
+
+.normal-grid-btn {
+    background: #0f172a !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+}
+
+.normal-grid-btn:hover {
+    background: #1e293b !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.5);
+}
+
+/* Grid layout breakpoints overrides */
+.products-grid-home-screen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .products-grid-home-screen {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid-home-screen {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid-home-screen {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-container {
+        padding: 0 1.25rem;
+    }
+}

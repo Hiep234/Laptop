@@ -1,0 +1,293 @@
+/* Testimonials & Newsletter Styling */
+.testimonials-newsletter-wrapper {
+    width: 100%;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 1. Testimonials Section */
+.testimonials-grid-section {
+    padding: 6rem 0;
+    background: #ffffff;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.testimonials-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Testimonial Card Styling */
+.premium-testimonial-card {
+    border-radius: 20px !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04) !important;
+    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    height: 100%;
+}
+
+.premium-testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.08) !important;
+    border-color: #1890ff !important;
+}
+
+.premium-testimonial-card .ant-card-body {
+    padding: 2.25rem 2rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 280px;
+}
+
+.testimonial-rating-stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.star-rating-icon {
+    color: #e2e8f0;
+}
+
+.star-rating-icon.filled {
+    fill: #f59e0b;
+    color: #f59e0b;
+}
+
+.testimonial-quote-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    font-style: italic;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+/* Author Profile */
+.testimonial-author-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+}
+
+.author-avatar-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+}
+
+.avatar-image-rounded {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.author-profile-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.author-profile-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* 2. Premium Newsletter Section */
+.premium-newsletter-section {
+    padding: 3rem 0 6rem 0;
+    background: #ffffff;
+}
+
+.newsletter-card-block {
+    background: radial-gradient(circle at 10% 20%, #1e1b4b 0%, #0f172a 90%);
+    border-radius: 24px;
+    padding: 5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+
+.newsletter-glow-backdrop {
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #a855f7);
+    filter: blur(130px);
+    opacity: 0.25;
+    z-index: 1;
+}
+
+.newsletter-card-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.newsletter-icon-box {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.mail-icon-glow {
+    color: #f59e0b;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+}
+
+.newsletter-headline {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.newsletter-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+}
+
+/* Newsletter Input Form */
+.newsletter-input-form {
+    display: flex;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.4rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-email-input {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    height: 48px !important;
+    font-size: 0.95rem !important;
+    padding-left: 1rem !important;
+}
+
+.newsletter-email-input::placeholder {
+    color: #64748b !important;
+}
+
+.newsletter-submit-btn {
+    height: 48px !important;
+    background: linear-gradient(to right, #f59e0b, #d97706) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0 1.75rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.newsletter-submit-btn:hover {
+    background: linear-gradient(to right, #fbbf24, #f59e0b) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+    .testimonials-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-card-block {
+        padding: 4rem 2rem;
+    }
+    
+    .newsletter-headline {
+        font-size: 1.75rem;
+    }
+    
+    .newsletter-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter-input-form {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 0.75rem;
+    }
+    
+    .newsletter-email-input {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        width: 100%;
+    }
+    
+    .newsletter-submit-btn {
+        width: 100% !important;
+    }
+    
+    .grid-container {
+        padding: 0 1.25rem;
+    }
+}

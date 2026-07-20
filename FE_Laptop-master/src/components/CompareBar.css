@@ -1,0 +1,209 @@
+/* ===== Compare Floating Bar ===== */
+.compare-bar-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.compare-bar {
+    pointer-events: all;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow:
+        0 -4px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: compareBarSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes compareBarSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.compare-bar-items {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.compare-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px 12px;
+    flex: 1;
+    min-width: 0;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.compare-bar-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.compare-bar-item-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.compare-bar-item-name {
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+}
+
+.compare-bar-item-remove {
+    background: rgba(239, 68, 68, 0.15);
+    border: none;
+    color: #fca5a5;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.compare-bar-item-remove:hover {
+    background: rgba(239, 68, 68, 0.35);
+    color: #fef2f2;
+    transform: scale(1.1);
+}
+
+.compare-bar-placeholder {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 14px 12px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+}
+
+.compare-bar-vs {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.compare-bar-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.compare-bar-btn {
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.compare-bar-btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+}
+
+.compare-bar-btn-primary:hover {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.compare-bar-btn-primary:disabled {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.compare-bar-btn-clear {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compare-bar-btn-clear:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .compare-bar {
+        margin: 0 10px 10px;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 16px;
+    }
+
+    .compare-bar-items {
+        width: 100%;
+    }
+
+    .compare-bar-actions {
+        width: 100%;
+    }
+
+    .compare-bar-btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    .compare-bar-item-name {
+        font-size: 12px;
+    }
+}
